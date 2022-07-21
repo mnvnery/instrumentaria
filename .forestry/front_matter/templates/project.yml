@@ -50,4 +50,5 @@ fields:
   config: {}
   label: Imagens
 pages:
+- _projects/do-principio-do-mundo.md
 - _projects/instrumentaria-poetica.md
