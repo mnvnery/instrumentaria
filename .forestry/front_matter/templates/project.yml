@@ -50,6 +50,7 @@ fields:
   config: {}
   label: Imagens
 pages:
+- _projects/7-poemas-para-um-mundo-novo.md
 - _projects/do-principio-do-mundo.md
 - _projects/instrumentaria-poetica.md
 - _projects/passagem-secreta.md
