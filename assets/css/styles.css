@@ -1,0 +1,35 @@
+---
+---
+    
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Agrandir Regular";
+    src: url("../fonts/Agrandir-Regular.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Apoc Normal";
+    src: url("../fonts/ApocNormal-Regular.otf");
+    font-weight: normal;
+}
+
+.nav-vertical {
+    width:100vh;    
+    position:fixed;
+    transform-origin: left top;
+    transform:rotate(-90deg) translateX(-100%);
+    -webkit-transform-origin: left top;
+    -webkit-transform:rotate(-90deg) translateX(-100%);
+}
+
+body {
+    font-family: 'Agrandir Regular';
+}
+
+.font-apoc {
+    font-family: "Apoc Normal";
+}

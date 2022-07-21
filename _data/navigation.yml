@@ -1,0 +1,10 @@
+- text: Home
+  url: /
+- text: Projetos
+  url: /projetos/
+- text: Música
+  url: 'https://fernandomota.bandcamp.com'
+- text: Contactos
+  url: /contactos/
+- text: Bio
+  url: /biografia/
