@@ -49,3 +49,5 @@ fields:
   type: image_gallery
   config: {}
   label: Imagens
+pages:
+- _projects/instrumentaria-poetica.md
