@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: _data/projetos.yml
+  label: Menu Projetos
+  match: "**/*"
 - type: directory
   path: _projects
   label: Projetos
