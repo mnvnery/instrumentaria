@@ -1,3 +1,13 @@
 ---
 layout: default
 ---
+<div class="pl-24 md:pl-20 pt-16 md:py-5 md:flex">
+    <div class="text-xl space-y-8">
+    {% for project in site.projects %}
+    <div>{{ project.title }}</div>
+    {% endfor %}
+    <div>.</div>
+    <div>outras criações</div>
+    <div>bandas sonoras</div>
+    </div>
+</div>
