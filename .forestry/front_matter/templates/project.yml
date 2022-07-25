@@ -40,11 +40,11 @@ fields:
     schema:
       format: html-blocks
   label: Sinopse
-- name: main_image
-  type: text
+- name: thumbnail
+  type: file
   config:
-    required: false
-  label: Imagem Principal
+    maxSize: 64
+  label: Thumbnail
 - name: imagens
   type: image_gallery
   config: {}
