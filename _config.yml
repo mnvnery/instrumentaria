@@ -19,6 +19,10 @@ postcss:
 sass:
   sass_dir: _sass
 
+collections:
+  projects: 
+    output: true
+
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
