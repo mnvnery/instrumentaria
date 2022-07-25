@@ -1,4 +1,22 @@
 ---
 label: Projects Page
 hide_body: true
-fields: []
+fields:
+- name: outras_criacoes
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Outras Criações
+- name: other_creations
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Other Creations
