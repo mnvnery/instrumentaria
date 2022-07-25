@@ -20,3 +20,9 @@ fields:
     schema:
       format: html-blocks
   label: Other Creations
+- name: bandas_sonoras
+  type: text
+  config:
+    required: false
+  label: Bandas Sonoras
+  description: adicionar aqui o link
