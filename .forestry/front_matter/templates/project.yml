@@ -51,7 +51,10 @@ fields:
   label: Imagens
 - name: blocos_conteudo
   type: blocks
-  template_types: []
+  template_types:
+  - texto
+  - imagem
+  - varias-imagens
   config:
     min: 
     max: 
