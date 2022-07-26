@@ -1,16 +1,18 @@
 ---
 layout: default
 ---
-<div class="pl-24 md:pl-20 pt-16 md:py-5 md:flex">
-    <div class="text-xl space-y-8">
+<div class="md:flex">
+    <div class="pl-24 md:px-20 pt-16 md:py-5 md:max-w-sm text-xl space-y-8 z-10 shadow-lg shadow-white">
         {% for project in site.projects %}
-        <div data-hover="{{ site.baseurl }}{{ project.thumbnail }}">{{ project.title }}</div>
+        <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects">{{ project.title }}</div>
         {% endfor %}
         <div>.</div>
         <div>outras criações</div>
         <div>bandas sonoras</div>
     </div>
-    <img class="project-img" src="/assets/img/dscf9018.webp" alt="">
+    <div class="w-full h-screen">
+        <img class="project-img h-full w-full object-cover" src="" alt="">
+    </div>
 </div>
 
 <script>
