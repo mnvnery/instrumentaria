@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: _data/bg-images.yml
+  label: Home
+  match: "**/*"
+- type: document
   path: _data/projetos.yml
   label: Menu Projetos
 - type: directory
