@@ -1,4 +1,9 @@
 ---
 label: Imagem
 hide_body: true
-fields: []
+fields:
+- name: imagem
+  type: file
+  config:
+    maxSize: 64
+  label: Imagem
