@@ -2,5 +2,18 @@
 layout: default
 ---
 <div>
-    <img src="{{site.baseurl}}/assets/img/bg-1.jpg" alt="Background" class="h-screen w-screen object-cover">
+    <img id='bgImage' src="{{site.baseurl}}/assets/img/bg-1.jpg" alt="Background" class="h-screen w-screen object-cover">
 </div>
+
+<script>
+const bgImage = new Array ();
+{% for image in site.data.bg_images %}
+bgImage.push("{{ image }}");
+{% endfor %}
+const size = bgImage.length
+const x = Math.floor(size*Math.random())
+
+$(document).ready(function(){
+    $('#bgImage').attr('src', bgImage[x]);
+});  
+</script>

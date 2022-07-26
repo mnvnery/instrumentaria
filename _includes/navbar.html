@@ -2,7 +2,7 @@
     <button class="underline underline-offset-4">ouvir</button>
     <button>silêncio</button>
 </div>
-<nav class="px-2 sm:px-4 py-2.5 nav-vertical z-10">
+<nav class="px-2 sm:px-4 py-2.5 nav-vertical z-30">
     <div class="container flex flex-row-reverse flex-wrap justify-between items-center mx-auto">
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center text-4xl p-2 ml-3 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -20,7 +20,7 @@
     </div>
 </nav>
 
-<div class="fixed z-0 hidden w-1/2 md:w-auto bg-black border border-white text-white" id="navbar-default">
+<div class="fixed z-20 hidden w-1/2 md:w-auto bg-black border border-white text-white" id="navbar-default">
     <div class="flex flex-col text-2xl my-4 pt-14 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
     
         {% for nav in site.data.navigation %}
