@@ -4,7 +4,7 @@ layout: default
 <div class="flex justify-center md:justify-start align-middle md:align-baseline">
     <div class="pl-1 md:pl-24 md:px-20 pt-16 md:py-5 max-w-[50%] md:max-w-[26%] text-center md:text-left text-xl space-y-7 z-10 md:shadow-lg md:shadow-white">
         {% for project in site.projects %}
-        <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects hover:text-yellow-100 hover:underline">{{ project.title }}</div>
+        <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects hover:text-yellow-100 hover:underline"><a href="{{ site.baseurl }}{{project.url}}">{{ project.title }}</a></div>
         {% endfor %}
         <div>.</div>
         <div>outras criações
@@ -13,7 +13,7 @@ layout: default
         <div>bandas sonoras</div>
     </div>
     <div class="w-full h-screen hidden md:block">
-        <img class="project-img h-full w-full object-cover" src="" alt="">
+        <img id='bgImage' class="project-img h-full w-full object-cover" src="{{site.baseurl}}/assets/img/bg-1.jpg" alt="">
     </div>
 </div>
 
