@@ -1,4 +1,8 @@
 ---
 label: Home
 hide_body: true
-fields: []
+fields:
+- name: imagens_background
+  type: image_gallery
+  config: {}
+  label: Imagens Background
