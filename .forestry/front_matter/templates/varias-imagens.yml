@@ -1,4 +1,8 @@
 ---
 label: Várias Imagens
 hide_body: true
-fields: []
+fields:
+- name: multi_images
+  type: image_gallery
+  config: {}
+  label: Várias Imagens
