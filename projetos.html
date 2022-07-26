@@ -2,12 +2,14 @@
 layout: default
 ---
 <div class="md:flex">
-    <div class="pl-24 md:px-20 pt-16 md:py-5 md:max-w-sm text-xl space-y-8 z-10 shadow-lg shadow-white">
+    <div class="pl-24 md:px-20 pt-16 md:py-5 md:max-w-[25%] text-xl space-y-7 z-10 shadow-lg shadow-white">
         {% for project in site.projects %}
         <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects">{{ project.title }}</div>
         {% endfor %}
         <div>.</div>
-        <div>outras criações</div>
+        <div>outras criações
+            <span class="text-sm">{{ site.data.projetos.outras_criacoes }}</span>
+        </div>
         <div>bandas sonoras</div>
     </div>
     <div class="w-full h-screen">
