@@ -1,12 +1,62 @@
 ---
 layout: default
 ---
-<div class="flex justify-center md:justify-start align-middle md:align-baseline">
-    <div class="pl-1 md:pl-24 md:px-20 pt-16 md:py-5 max-w-[50%] md:max-w-[26%] text-center md:text-left text-xl space-y-7 z-10 md:shadow-lg md:shadow-white">
-        <h1 class="text-2xl">{{ page.title }}</h1>
-        <div class="text-xs">{{ page.ficha_tecnica }}</div>
+<div class="pl-24 pb-16 md:pb-0 md:pl-0 flex flex-col justify-center md:flex-row md:justify-start align-middle md:align-baseline">
+    <div class="flex flex-col justify-between md:pl-24 md:px-10 pt-16 md:py-5 max-w-[80%] md:max-w-[25%] text-left text-xl z-10 md:shadow-lg md:shadow-white">
+        <div>
+            <h1 class="text-2xl">{{ page.title }}</h1>
+            <h3 class="text-base my-4">{{ page.autoria }}</h3>
+        </div>
+        <div>
+            <div class="text-xs mt-10 ficha-tecnica font-ag-narrow">{{ page.ficha_tecnica }}</div>
+            <div class="flex text-xs justify-between mt-8 fixed md:static bottom-0 w-[70%] md:w-full bg-black md:bg-transparent py-3">
+                <a href="{{page.previous.url}}" class="flex items-center"><i class="ri-arrow-left-s-line text-base"></i><span>projeto anterior</span></a>
+                <a href="{{page.next.url}}" class="flex items-center"><span>projeto seguinte</span><i class="ri-arrow-right-s-line text-base"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="w-full h-screen hidden md:block">
-
+    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8">
+        {% for item in page.blocos_conteudo %}
+            {% if item.template == 'texto' %}
+                <div class="font-baskerville leading-tight text-base item-texto md:self-end">{{item.texto}}</div>
+            {% elsif item.template == 'varias-imagens' %}
+                {% for img in item.multi_images %}
+                    <img src="{{ site.baseurl }}/{{ img }}" alt="">
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
     </div>
+    <span id="panLeft" class="panner fixed left-[25%] top-1/2 px-10 cursor-pointer hidden" onclick="sLeft()"><i class="ri-arrow-left-s-line text-2xl"></i></span>
+    <span id="panRight" class="panner fixed right-0 top-1/2 px-5 cursor-pointer hidden md:block" onclick="sRight()"><i class="ri-arrow-right-s-line text-2xl"></i></span>
 </div>
+
+<script>
+    function sRight() {
+        var container = document.querySelector('#container');
+        container.scrollBy({
+            left: 500,
+            top: 0,
+            behavior: 'smooth'
+        });
+        $('#panLeft').removeClass('hidden');
+    }
+    function sLeft() {
+        var container = document.querySelector('#container');
+        container.scrollBy({
+            left: -500,
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    function transformScroll(event) {
+    if (!event.deltaY) {
+        return;
+    }
+
+    event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
+    event.preventDefault();
+    }
+
+    var element = document.scrollingElement || document.documentElement;
+    element.addEventListener('wheel', transformScroll);
+</script>

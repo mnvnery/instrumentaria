@@ -12,8 +12,21 @@
 }
 
 @font-face {
+    font-family: "Agrandir Narrow";
+    src: url("../fonts/Agrandir-Narrow.otf");
+    font-weight: normal;
+}
+
+
+@font-face {
     font-family: "Apoc Normal";
     src: url("../fonts/ApocNormal-Regular.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Baskerville";
+    src: url("../fonts/Baskerville.ttc");
     font-weight: normal;
 }
 
@@ -32,4 +45,34 @@ body {
 
 .font-apoc {
     font-family: "Apoc Normal";
+}
+
+.font-ag-narrow {
+    font-family: "Agrandir Narrow";
+}
+
+.font-baskerville {
+    font-family: 'Baskeville';
+}
+
+.item-texto p {
+    min-width: 17rem;
+}
+
+.ficha-tecnica strong {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+
+.slide-in {
+    animation: slide-in 0.8s forwards;
+    -webkit-animation: slide-in 0.8s forwards;
 }

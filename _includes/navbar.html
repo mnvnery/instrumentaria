@@ -1,6 +1,9 @@
+<audio id="pageAudio" hidden src="{{site.baseurl}}/assets/img/09_Cascata.mp3" type="audio/mpeg">
+</audio>
+
 <div class="font-apoc flex space-x-4 p-4 absolute z-10 right-0">
-    <button class="underline underline-offset-4">ouvir</button>
-    <button>silêncio</button>
+    <button class="underline-offset-4 ouvir" id="audioPlay">ouvir</button>
+    <button id="audioPause" class="silencio underline underline-offset-4">silêncio</button>
 </div>
 <nav class="px-2 sm:px-4 py-2.5 nav-vertical z-30">
     <div class="container flex flex-row-reverse flex-wrap justify-between items-center mx-auto">
@@ -14,7 +17,7 @@
         <div class="hidden md:flex items-center space-x-4">  
             <a href="#" class="text-xs hidden md:block ml-3 py-1 pr-4 pl-3 md:p-0 rotate-90">EN</a>
             {% for nav in site.data.navigation offset:1 %}
-                <div  class="hidden md:block {% if nav.url == page.url %} underline text-yellow-100 {% endif %}"><a href="{{ nav.url }}" class="ml-3 py-1 pr-4 pl-3 md:p-0">{{ nav.text }}</a></div>
+                <div  class="hidden md:block hover:underline hover:text-yellow-100  {% if nav.url == page.url %} underline text-yellow-100 {% endif %}"><a href="{{ nav.url }}" class="ml-3 py-1 pr-4 pl-3 md:p-0" target="{{nav.target}}">{{ nav.text }}</a></div>
             {% endfor %}
         </div>  
     </div>
