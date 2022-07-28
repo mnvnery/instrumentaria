@@ -2,13 +2,13 @@
 layout: default
 ---
 <div class="flex justify-center md:justify-start align-middle md:align-baseline">
-    <div class="pl-1 md:pl-24 md:px-16 pt-16 md:py-5 max-w-[50%] md:max-w-[26%] text-center md:text-left text-2xl md:flex md:flex-col md:justify-between z-10 md:shadow-lg md:shadow-white md:-translate-x-full slide-in">
+    <div class="pl-1 md:pl-24 md:px-16 pt-16 md:py-5 2xl:py-10 max-w-[50%] md:max-w-[26%] text-center md:text-left text-2xl 2xl:text-3xl md:flex md:flex-col md:justify-between 2xl:justify-start 2xl:space-y-10 z-10 md:shadow-lg md:shadow-white md:-translate-x-full slide-in">
         {% for project in site.projects %}
         <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects hover:text-yellow-100 hover:underline underline-offset-4"><a href="{{ site.baseurl }}{{project.url}}">{{ project.title }}</a></div>
         {% endfor %}
         <div>.</div>
         <div>outras criações
-            <span class="text-sm creations">{{ site.data.projetos.outras_criacoes }}</span>
+            <span class="text-sm 2xl:text-lg 2xl:leading-tight creations">{{ site.data.projetos.outras_criacoes }}</span>
         </div>
         <div>bandas sonoras</div>
     </div>
