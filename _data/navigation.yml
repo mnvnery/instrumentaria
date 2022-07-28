@@ -1,10 +1,15 @@
 - text: Home
   url: /
+  target: _self
 - text: Projetos
   url: /projetos/
+  target: _self
 - text: Música
   url: 'https://fernandomota.bandcamp.com'
+  target: _blank
 - text: Contactos
   url: /contactos/
+  target: _self
 - text: Bio
   url: /biografia/
+  target: _self
