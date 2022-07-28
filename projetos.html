@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="flex justify-center md:justify-start align-middle md:align-baseline">
-    <div class="pl-1 md:pl-24 md:px-20 pt-16 md:py-5 max-w-[50%] md:max-w-[26%] text-center md:text-left text-xl space-y-7 z-10 md:shadow-lg md:shadow-white md:-translate-x-full slide-in">
+    <div class="pl-1 md:pl-24 md:px-20 pt-16 md:py-5 max-w-[50%] md:max-w-[26%] text-center md:text-left text-2xl md:flex md:flex-col md:justify-between z-10 md:shadow-lg md:shadow-white md:-translate-x-full slide-in">
         {% for project in site.projects %}
         <div data-hover="{{ site.baseurl }}/{{ project.thumbnail }}" class="projects hover:text-yellow-100 hover:underline"><a href="{{ site.baseurl }}{{project.url}}">{{ project.title }}</a></div>
         {% endfor %}
