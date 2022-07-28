@@ -13,9 +13,9 @@ fields:
   config:
     required: false
     options:
-    - Small
-    - Medium
-    - Large
+    - small
+    - medium
+    - large
     source:
       type: simple
       section: 
@@ -28,9 +28,9 @@ fields:
   config:
     required: false
     options:
-    - 'Top '
-    - Bottom
-    - Center
+    - 'top '
+    - bottom
+    - center
     source:
       type: simple
       section: 
