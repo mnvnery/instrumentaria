@@ -2,26 +2,26 @@
 layout: default
 ---
 <div class="pl-24 pb-16 md:pb-0 md:pl-0 flex flex-col justify-center md:flex-row md:justify-start align-middle md:align-baseline">
-    <div class="flex flex-col justify-between md:pl-24 md:px-10 pt-16 md:py-5 max-w-[80%] md:max-w-[25%] text-left text-xl z-10 md:shadow-lg md:shadow-white">
+    <div class="flex flex-col justify-between md:pl-24 md:px-10 pt-16 md:py-5 2xl:py-10 max-w-[80%] md:max-w-[25%] 2xl:max-w-[22%] text-left text-xl z-10 md:shadow-lg md:shadow-white">
         <div>
-            <h1 class="text-2xl">{{ page.title }}</h1>
+            <h1 class="text-2xl 2xl:text-3xl">{{ page.title }}</h1>
             <h3 class="text-base my-4">{{ page.autoria }}</h3>
         </div>
         <div>
-            <div class="text-xs mt-10 ficha-tecnica font-ag-narrow">{{ page.ficha_tecnica }}</div>
+            <div class="text-xs 2xl:text-sm mt-10 ficha-tecnica font-ag-narrow">{{ page.ficha_tecnica }}</div>
             <div class="flex text-xs justify-between mt-8 fixed md:static bottom-0 w-[70%] md:w-full bg-black md:bg-transparent py-3">
                 <a href="{{page.previous.url}}" class="flex items-center"><i class="ri-arrow-left-s-line text-base"></i><span>projeto anterior</span></a>
                 <a href="{{page.next.url}}" class="flex items-center"><span>projeto seguinte</span><i class="ri-arrow-right-s-line text-base"></i></a>
             </div>
         </div>
     </div>
-    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:space-x-8 md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8">
+    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:space-x-8 md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8 2xl:pb-12">
         {% for item in page.blocos_conteudo %}
             {% if item.template == 'texto' %}
-                <div class="font-baskerville leading-5 text-base item-texto md:self-end">{{item.texto}}</div>
+                <div class="font-baskerville leading-5 text-base item-texto md:self-end 2xl:text-lg 2xl:leading-tight">{{item.texto}}</div>
             {% elsif item.template == 'varias-imagens' %}
                 {% for img in item.multi_images %}
-                    <img src="{{ site.baseurl }}/{{ img }}" alt="">
+                    <img src="{{ site.baseurl }}/{{ img }}" alt="" class='object-cover'>
                 {% endfor %}
             {% endif %}
         {% endfor %}
