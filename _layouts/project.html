@@ -15,10 +15,10 @@ layout: default
             </div>
         </div>
     </div>
-    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8">
+    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:space-x-8 md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8">
         {% for item in page.blocos_conteudo %}
             {% if item.template == 'texto' %}
-                <div class="font-baskerville leading-tight text-base item-texto md:self-end">{{item.texto}}</div>
+                <div class="font-baskerville leading-5 text-base item-texto md:self-end">{{item.texto}}</div>
             {% elsif item.template == 'varias-imagens' %}
                 {% for img in item.multi_images %}
                     <img src="{{ site.baseurl }}/{{ img }}" alt="">
@@ -26,8 +26,9 @@ layout: default
             {% endif %}
         {% endfor %}
     </div>
-    <span id="panLeft" class="panner fixed left-[25%] top-1/2 px-10 cursor-pointer hidden" onclick="sLeft()"><i class="ri-arrow-left-s-line text-2xl"></i></span>
-    <span id="panRight" class="panner fixed right-0 top-1/2 px-5 cursor-pointer hidden md:block" onclick="sRight()"><i class="ri-arrow-right-s-line text-2xl"></i></span>
+    <span id="panLeft" class="panner fixed left-[25%] top-1/2 px-10 cursor-pointer hidden" onclick="sLeft()"><svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M71 3L29 52.5L71 96.5" stroke="white" stroke-width="2"/></svg></span>
+    <span id="panRight" class="panner fixed right-0 top-1/2 px-5 cursor-pointer hidden md:block" onclick="sRight()"><svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29 96.5L71 47L29 3" stroke="white" stroke-width="2"/></svg>
+</span>
 </div>
 
 <script>

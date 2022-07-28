@@ -17,12 +17,6 @@
     font-weight: normal;
 }
 
-@font-face {
-    font-family: "Baskerville";
-    src: url("../fonts/Baskerville.ttc");
-    font-weight: normal;
-}
-
 .nav-vertical {
     width:100vh;    
     position:fixed;
@@ -45,7 +39,9 @@ body {
 }
 
 .font-baskerville {
-    font-family: 'Baskeville';
+    font-family: baskerville-display-pt, serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .item-texto p {
@@ -68,4 +64,24 @@ body {
 .slide-in {
     animation: slide-in 0.8s forwards;
     -webkit-animation: slide-in 0.8s forwards;
+}
+
+/* width */
+::-webkit-scrollbar {
+height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #555; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(76, 76, 76); 
 }
