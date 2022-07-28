@@ -69,6 +69,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
 height: 5px;
+width: 5px;
 }
 
 /* Track */
@@ -84,4 +85,28 @@ background: #555;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 background: rgb(76, 76, 76); 
+}
+
+.size-small {
+    width: 20vw;
+    height: auto;
+}
+
+.size-medium {
+    width: 40vw;
+    height: intrinsic;
+}
+
+.size-large {
+    width: auto;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.self-bottom {
+    align-self: end;
+}
+
+.self-top {
+    align-self: start;
 }

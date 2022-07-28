@@ -15,14 +15,12 @@ layout: default
             </div>
         </div>
     </div>
-    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:space-x-8 md:overflow-x-scroll pr-10 md:px-10 pt-14 md:pt-5 md:pb-8 2xl:pb-12">
+    <div id='container' class="w-full h-screen flex flex-col space-y-5 md:flex-row md:overflow-x-scroll md:overflow-y-hidden pr-10 md:px-10 pt-14 md:pt-5 md:pb-8 2xl:pb-12">
         {% for item in page.blocos_conteudo %}
             {% if item.template == 'texto' %}
                 <div class="font-baskerville leading-5 text-base item-texto md:self-end 2xl:text-lg 2xl:leading-tight">{{item.texto}}</div>
-            {% elsif item.template == 'varias-imagens' %}
-                {% for img in item.multi_images %}
-                    <img src="{{ site.baseurl }}/{{ img }}" alt="" class='object-cover'>
-                {% endfor %}
+            {% elsif item.template == 'imagem' %}
+                    <img src="{{ site.baseurl }}/{{ item.imagem }}" alt="" class='size-{{item.size}} self-{{item.position}} mx-8'>
             {% endif %}
         {% endfor %}
     </div>
