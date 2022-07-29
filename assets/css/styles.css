@@ -1,19 +1,19 @@
 @font-face {
     font-family: "Agrandir Regular";
-    src: url("../fonts/Agrandir-Regular.otf");
+    src: url("../fonts/Agrandir-Regular.otf") format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Agrandir Narrow";
-    src: url("../fonts/Agrandir-Narrow.otf");
+    src: url("../fonts/Agrandir-Narrow.otf") format("opentype");
     font-weight: normal;
 }
 
 
 @font-face {
     font-family: "Apoc Normal";
-    src: url("../fonts/ApocNormal-Regular.otf");
+    src: url("../fonts/ApocNormal-Regular.otf") format("opentype");
     font-weight: normal;
 }
 
@@ -28,6 +28,8 @@
 
 body {
     font-family: 'Agrandir Regular';
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 .font-apoc {
@@ -87,26 +89,31 @@ background: #555;
 background: rgb(76, 76, 76); 
 }
 
-.size-small {
-    width: 20vw;
-    height: auto;
+@media (min-width: 768px) { 
+
+    .size-small {
+        width: 20vw;
+        height: auto;
+    }
+    
+    .size-medium {
+        width: 40vw;
+        height: intrinsic;
+    }
+    
+    .size-large {
+        width: auto;
+        height: 90vh;
+        object-fit: cover;
+    }
+    
+    .self-bottom {
+        align-self: end;
+    }
+    
+    .self-top {
+        align-self: start;
+    }
+
 }
 
-.size-medium {
-    width: 40vw;
-    height: intrinsic;
-}
-
-.size-large {
-    width: auto;
-    height: 90vh;
-    object-fit: cover;
-}
-
-.self-bottom {
-    align-self: end;
-}
-
-.self-top {
-    align-self: start;
-}
