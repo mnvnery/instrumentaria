@@ -8,7 +8,12 @@ layout: default
             <h3 class="text-base my-4">{{ page.autoria }}</h3>
         </div>
         <div>
-            <div class="text-xs 2xl:text-sm mt-10 ficha-tecnica font-ag-narrow">{{ page.ficha_tecnica }}</div>
+            <div class="accordion">
+                <button class="text-xs 2xl:text-sm sinopse-btn flex w-full justify-between font-ag-narrow hover:text-yellow-100"><span>Sinopse</span><i class="ri-subtract-line"></i></button>
+                <div class="mt-2 font-ag-narrow leading-5 text-base" id="sinopse">{{ page.sinopse }}</div>
+                <button class="text-xs 2xl:text-sm mt-5 ficha-tecnica-btn flex w-full justify-between font-ag-narrow hover:text-yellow-100"><span>Ficha Técnica</span><i class="ri-add-line"></i></button>
+                <div class="hidden text-xs 2xl:text-sm mt-2 ficha-tecnica font-ag-narrow" id="ficha-tecnica">{{ page.ficha_tecnica }}</div>
+            </div>
             <div class="flex text-xs justify-between mt-8 fixed md:static bottom-0 w-[70%] md:w-full bg-black md:bg-transparent py-3">
                 <a href="{{page.previous.url}}" class="flex items-center"><i class="ri-arrow-left-s-line text-base"></i><span>projeto anterior</span></a>
                 <a href="{{page.next.url}}" class="flex items-center"><span>projeto seguinte</span><i class="ri-arrow-right-s-line text-base"></i></a>
@@ -20,7 +25,7 @@ layout: default
             {% if item.template == 'texto' %}
                 <div class="font-baskerville leading-5 text-base item-texto md:self-end 2xl:text-lg 2xl:leading-tight">{{item.texto}}</div>
             {% elsif item.template == 'imagem' %}
-                    <img src="{{ site.baseurl }}/{{ item.imagem }}" alt="" class='size-{{item.size}} self-{{item.position}} mx-8'>
+                    <img src="{{ site.baseurl }}/{{ item.imagem }}" alt="" class='size-{{item.size}} self-{{item.position}} md:mx-8'>
             {% endif %}
         {% endfor %}
     </div>
@@ -58,4 +63,29 @@ layout: default
 
     var element = document.scrollingElement || document.documentElement;
     element.addEventListener('wheel', transformScroll);
+
+    (function($) {
+    
+        var allPanels = $('.accordion > div');
+        
+        $('.accordion > button').click(function() {
+            allPanels.slideUp();
+            $(this).next().slideDown();
+            return false;
+        });
+
+        $('.sinopse-btn').click(function() {
+            $('.sinopse-btn i').addClass('ri-subtract-line');
+            $('.sinopse-btn i').removeClass('ri-add-line');
+            $('.ficha-tecnica-btn i').removeClass('ri-subtract-line');
+            $('.ficha-tecnica-btn i').addClass('ri-add-line');
+        });
+        $('.ficha-tecnica-btn').click(function() {
+            $('.ficha-tecnica-btn i').addClass('ri-subtract-line');
+            $('.ficha-tecnica-btn i').removeClass('ri-add-line');
+            $('.sinopse-btn i').removeClass('ri-subtract-line');
+            $('.sinopse-btn i').addClass('ri-add-line');
+        });
+    
+    })(jQuery);
 </script>
