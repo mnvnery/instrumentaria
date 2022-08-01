@@ -17,7 +17,7 @@
         <div class="hidden md:flex items-center space-x-4">  
             <a href="#" class="text-xs 2xl:text-lg hidden md:block ml-3 py-1 pr-4 pl-3 md:p-0 rotate-90">EN</a>
             {% for nav in site.data.navigation offset:1 %}
-                <div  class="hidden md:block hover:underline hover:text-yellow-100  {% if nav.url == page.url %} underline text-yellow-100 {% endif %}"><a href="{{ nav.url }}" class="ml-3 py-1 pr-4 pl-3 md:p-0 2xl:text-xl" target="{{nav.target}}">{{ nav.text }}</a></div>
+                <div  class="hidden md:block hover:underline hover:text-yellow-100  {% if nav.url == page.url %} underline text-yellow-100 {% endif %} {{nav.text | slugify}}"><a href="{{ nav.url }}" class="ml-3 py-1 pr-4 pl-3 md:p-0 2xl:text-xl" target="{{nav.target}}">{{ nav.text }}</a></div>
             {% endfor %}
         </div>  
     </div>

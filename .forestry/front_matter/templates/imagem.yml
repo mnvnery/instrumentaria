@@ -28,7 +28,7 @@ fields:
   config:
     required: false
     options:
-    - 'top '
+    - top
     - bottom
     - center
     source:

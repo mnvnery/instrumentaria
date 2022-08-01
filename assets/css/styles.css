@@ -98,11 +98,11 @@ background: rgb(76, 76, 76);
     
     .size-medium {
         width: 40vw;
-        height: intrinsic;
+        height: auto;
     }
     
     .size-large {
-        width: auto;
+        width: 100%;
         height: 90vh;
         object-fit: cover;
     }
