@@ -2,19 +2,19 @@
 layout: default
 ---
 <div class="pl-24 pb-16 md:pb-0 md:pl-0 flex flex-col justify-center md:flex-row md:justify-start align-middle md:align-baseline">
-    <div class="flex flex-col justify-between md:pl-24 md:px-10 pt-16 md:py-5 2xl:py-10 max-w-[80%] md:max-w-[25%] 2xl:max-w-[22%] text-left text-xl z-10 md:shadow-lg md:shadow-white">
+    <div class="flex flex-col justify-between md:pl-24 md:px-10 pt-16 md:py-5 2xl:py-10 max-w-[80%] md:w-[32%] 2xl:w-[30%] 3xl:w-[25%] text-left text-xl z-10 md:shadow-lg md:shadow-white">
         <div>
-            <h1 class="text-2xl 2xl:text-3xl">{{ page.title }}</h1>
-            <h3 class="text-base my-4">{{ page.autoria }}</h3>
+            <h1 class="text-2xl 2xl:text-3xl 3xl:text-4xl">{{ page.title }}</h1>
+            <h3 class="text-base my-4 3xl:text-xl">{{ page.autoria }}</h3>
         </div>
         <div>
             <div class="accordion">
-                <button class="text-xs 2xl:text-sm sinopse-btn flex w-full justify-between font-ag-narrow tracking-wider hover:text-yellow-100"><span>SINOPSE</span><i class="ri-subtract-line"></i></button>
-                <div class="mt-2 font-ag-narrow tracking-wide leading-5 text-base" id="sinopse">{{ page.sinopse }}</div>
-                <button class="text-xs 2xl:text-sm mt-5 ficha-tecnica-btn flex w-full justify-between font-ag-narrow tracking-wider hover:text-yellow-100"><span>FICHA TÉCNICA</span><i class="ri-add-line"></i></button>
-                <div class="hidden text-xxs 2xl:text-sm mt-2 ficha-tecnica font-ag-narrow tracking-wide" id="ficha-tecnica">{{ page.ficha_tecnica }}</div>
+                <button class="text-xs 2xl:text-sm sinopse-btn flex w-full justify-between font-ag-narrow tracking-wider hover:text-yellow-100 3xl:text-xl"><span>SINOPSE</span><i class="ri-subtract-line"></i></button>
+                <div class="mt-2 font-ag-narrow tracking-wide leading-5 text-base 3xl:text-xl" id="sinopse">{{ page.sinopse }}</div>
+                <button class="text-xs 2xl:text-sm mt-5 ficha-tecnica-btn flex w-full justify-between font-ag-narrow tracking-wider hover:text-yellow-100 3xl:text-xl"><span>FICHA TÉCNICA</span><i class="ri-add-line"></i></button>
+                <div class="hidden text-xxs 2xl:text-sm mt-2 ficha-tecnica font-ag-narrow tracking-wide 3xl:text-xl" id="ficha-tecnica">{{ page.ficha_tecnica }}</div>
             </div>
-            <div class="flex text-xs justify-between mt-8 fixed md:static bottom-0 w-[70%] md:w-full bg-black md:bg-transparent py-3">
+            <div class="flex text-xs justify-between mt-8 fixed md:static bottom-0 w-[70%] md:w-full bg-black md:bg-transparent py-3 3xl:text-xl">
                 <a href="{{page.previous.url}}" class="flex items-center"><i class="ri-arrow-left-s-line text-base"></i><span>anterior</span></a>
                 <a href="{{page.next.url}}" class="flex items-center"><span>seguinte</span><i class="ri-arrow-right-s-line text-base"></i></a>
             </div>
@@ -66,25 +66,42 @@ layout: default
 
     (function($) {
     
-        var allPanels = $('.accordion > div');
+        // var allPanels = $('.accordion > div');
         
-        $('.accordion > button').click(function() {
-            allPanels.slideUp();
-            $(this).next().slideDown();
-            return false;
-        });
+       // $('.accordion > button').click(function() {
+       //     allPanels.slideUp();
+         //   $(this).next().slideDown();
+          //  return false;
+        // });
 
         $('.sinopse-btn').click(function() {
             $('.sinopse-btn i').addClass('ri-subtract-line');
             $('.sinopse-btn i').removeClass('ri-add-line');
             $('.ficha-tecnica-btn i').removeClass('ri-subtract-line');
             $('.ficha-tecnica-btn i').addClass('ri-add-line');
+            if ($('#sinopse').is(':visible')) {
+                $('#sinopse').slideUp();
+                $('#ficha-tecnica').slideDown();
+            } else {
+                $('#sinopse').slideDown();
+            }
+            if ($('#ficha-tecnica').is(':visible')) {
+                $('#ficha-tecnica').slideUp();
+            }
         });
         $('.ficha-tecnica-btn').click(function() {
             $('.ficha-tecnica-btn i').addClass('ri-subtract-line');
             $('.ficha-tecnica-btn i').removeClass('ri-add-line');
             $('.sinopse-btn i').removeClass('ri-subtract-line');
             $('.sinopse-btn i').addClass('ri-add-line');
+            if ($('#ficha-tecnica').is(':visible')) {
+                $('#ficha-tecnica').slideUp();
+            } else {
+                $('#ficha-tecnica').slideDown();
+            }
+            if ($('#sinopse').is(':visible')) {
+                $('#sinopse').slideUp();
+            }
         });
     
     })(jQuery);
