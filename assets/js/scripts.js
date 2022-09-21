@@ -2,9 +2,27 @@
 ---
 
 $('#menu-btn').on('click', function () {
-    $('#menu-btn').toggleClass('ri-menu-line');
-    $('#menu-btn').toggleClass('ri-close-fill');
     $('#navbar-default').toggleClass('hidden');
+});
+
+$('#close-btn').on('click', function () {
+    $('#navbar-default').toggleClass('hidden');
+});
+
+$(document).ready(function(){
+        $('#menu-btn').on('click', function(){
+        $('#navbar-default').removeClass('hidden');
+        });
+    // close modal on clicking close button
+    $('#close-btn').on('click',function(){
+        $('#navbar-default').addClass('hidden');
+    });
+    // close modal on click outside at anywhere
+    $(document).on('click',function(e){
+        if(!(($(e.target).closest("#navbar-default").length > 0 ) || ($(e.target).closest("#menu-btn").length > 0))){
+        $("#navbar-default").addClass('hidden');
+        }
+    });
 });
 
 const bgImage = new Array ();
