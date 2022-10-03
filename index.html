@@ -1,6 +1,15 @@
 ---
-layout: default
+layout: default-min
 ---
-<div>
-    <img id='bgImage' src="" alt="Background" class="h-screen w-screen object-cover">
+<div class="h-screen w-screen relative">
+        <img src="{{site.baseurl}}/assets/img/bg-1.jpg" alt="Background" class="h-screen w-screen object-cover absolute top-0 left-0">
+        <div class="w-screen h-screen flex flex-col justify-center items-center absolute top-0 left-0">
+            <div class="ml-20 grid grid-cols-2 md:ml-0">
+                <div><img src="{{site.baseurl}}/assets/img/instrumentaria-poetica-02.svg" alt="instrumentaria" class="w-[40vw] md:w-[20vw] h-auto"></div>
+                <div></div>
+                <div></div>
+                <div><img src="{{site.baseurl}}/assets/img/instrumentaria-poetica-01.svg" alt="poetica" class="w-[40vw] md:w-[20vw] h-auto"></div>
+            </div>
+            <div class="text-2xl md:self-start md:ml-[22vw] md:mt-[-10vh] 3xl:text-4xl">website em atualização...</div>
+        </div>
 </div>
