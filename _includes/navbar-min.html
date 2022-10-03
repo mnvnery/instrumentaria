@@ -1,0 +1,27 @@
+<audio id="pageAudio" hidden src="{{site.baseurl}}/assets/img/09_Cascata.mp3" type="audio/mpeg">
+</audio>
+
+<div class="font-apoc flex space-x-4 p-4 2xl:p-8 absolute z-10 right-0 2xl:text-xl 3xl:text-2xl">
+    <button class="underline-offset-4 ouvir" id="audioPlay">ouvir</button>
+    <button id="audioPause" class="silencio underline underline-offset-4">silêncio</button>
+</div>
+<nav class="px-2 sm:px-4 2xl:px-8 sm:py-2.5 nav-vertical z-30">
+    <div class="container flex flex-row-reverse flex-wrap justify-between items-center mx-auto">
+        <a href="/" class="p-2">
+            <span class="self-center text-2xl md:text-2xl 2xl:text-3xl ml-16 md:ml-4 font-apoc whitespace-nowrap 3xl:text-5xl">Fernando Mota</span>
+        </a>
+    </div>
+</nav>
+
+<div class="fixed z-20 hidden w-1/2 md:w-auto bg-black border border-white text-white" id="navbar-default">
+    <div class="flex flex-col text-2xl my-3 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+        <div class="text-4xl pl-4 mb-4" id="close-btn"><i class="ri-close-fill"></i></div>
+        {% for nav in site.data.navigation %}
+            <div {% if nav.url == page.url %} class="underline text-yellow-100" {% endif %}><a href="{{ nav.url }}" class="ml-3 py-1 pr-4 pl-3 md:p-0">{{ nav.text }}</a></div>
+        {% endfor %}
+        <div class="py-5 text-base">
+            <a href="#" class="block ml-3 py-1 pr-4 pl-3 md:p-0">EN</a>
+            <a href="#" class="block ml-3 py-1 pr-4 pl-3 md:p-0"><i class="ri-instagram-line"></i></a>
+        </div>
+    </div>
+</div>
